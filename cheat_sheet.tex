@@ -183,23 +183,24 @@ To successor a number, you compare to min/max. If it's between min and max, you 
 
 The trick here is that if you make one recursive call on input of size $O(\sqrt{N}$, you get $O(\log \log N)$ time.
 
-\section{ Show that Vector Cover is in NPC }
-Vertex Cover is defined as a set of nodes such that every edge in the graph is incident to at least one node in the set.
-\subsection{Converting to a Decision Problem}
-For this problem, we will consider the decision version of the problem defined as follows:\\
-Input: A graph $G$, and an integer $k$\\
-Output: Yes, if $G$ contains a vertex cover of size $k$, no otherwise.
-
-\subsection{k-independent set}
-The k-independent set decision problem is defined as follows:\\
-Input: A graph $G$, and an integer $k$\\
-Output: Yes, if $G$ contains an independent set of size $k$, no otherwise.\\
-\subsection{Claim: The k-independent set problem reduces to the Vertex Cover problem.}
-Let's assume we have a polynomial time solution to the k-independent set problem.\\
-Let's assume that we have a vertex cover $V$ in the graph $G$ of size $k$. This means that every edge in the graph is incident to one of the nodes in $V$. \\
-Let's consider the set $V' = G - V$. No two nodes in $V'$ have an edge between them, because if an edge was between two nodes $u$ and $v$, then one of $u$ and $v$ would be in $V$.\\
-This means that $V'$ is a independent set of length $n-k$.\\
-Hence, if we can solve the Vertex Cover problem in polynomial time, we can solve the k-independent set problem is polynomial time as well.
+\section{ Identities }
+Basic identities.
+\subsection{ Log Rules }
+\begin{enumerate}
+    \item $a = b^c <=> log_c(b)$
+    \item $a = b^{log_b(a)}$
+    \item $log(a b) = log(a) + log(b)$
+    \item $log_b(a) = log(a)/log(b)$
+    \item $log_b(1/a) = -log_b(a)$
+    \item $a^{log_b(c)} = c^{log_b(a)}$
+    \end{enumerate}
+\subsection{ Summation Rules}
+\begin{enumerate}
+    \item $\sum_{i = 1}^n i = 1/2(k(k+1))$
+    \item $\sum_{i = 1}^n i^2 = 1/6(k(k+1)(2k+1))$
+    \item $\sum_{i = 1}^n i^3 = 1/4(n^2 (n+1)^2))$
+    \item $\sum_{i = 1}^n i * 2^i = (k-1) * 2^{k+1} + 2$
+\end{enumerate}
 
 \section{ Min Degree Spanning Tree }
 \subsection{Modifying the problem into a decision problem}
